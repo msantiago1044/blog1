@@ -31,13 +31,13 @@
         <div class="ambient-aura"></div>
 
         <!-- Sección Hero Editorial -->
-        <section id="inicio" class="hero animated-entrance">
+        <section id="inicio" class="hero reveal-on-scroll">
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-statement">
                         <h2>Explorando la intersección entre <em>arquitectura de software</em>, cultura técnica y robustez.</h2>
                         <div class="hero-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80" alt="Minimalist abstract digital graphic structure" class="hero-image">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80" alt="Minimalist abstract digital graphic structure" class="hero-image fade-image">
                         </div>
                     </div>
                     <div class="hero-bio">
@@ -49,7 +49,7 @@
         </section>
 
         <!-- Sección de Blog Asimétrica -->
-        <section id="blog" class="blog-section animated-entrance">
+        <section id="blog" class="blog-section reveal-on-scroll">
             <div class="container">
                 <h3>Últimas Publicaciones</h3>
                 
@@ -57,7 +57,7 @@
                     <!-- Artículo Destacado (Principal) -->
                     <article class="featured-post">
                         <div class="featured-image-container">
-                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="Symmetry and structures in modern engineering" class="featured-image">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="Symmetry and structures in modern engineering" class="featured-image fade-image">
                             <button class="bookmark-btn" aria-label="Guardar artículo">
                                 <svg class="bookmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
@@ -67,7 +67,7 @@
                         <span class="post-category">Destacado / Inteligencia Artificial</span>
                         <h4>Introducción a GitHub Copilot y la era de la programación asistida</h4>
                         <span class="post-date">Publicado el 6 de agosto, 2026</span>
-                        <p>La inteligencia artificial ha dejado de ser una promesa de laboratorio para convertirse en un participante activo de nuestra rutina diaria de desarrollo. GitHub Copilot no es solo un autocompletado avanzado; representa un cambio paradigmático en la forma en que los ingenieros interactuamos con la abstracción del código, agilizando tareas repetitivas y permitiéndonos enfocar el esfuerzo cognitivo en decisiones de alto nivel.</p>
+                        <p>La inteligencia artificial ha dejado de ser una promesa de laboratorio para convertirse en un participant activo de nuestra rutina diaria de desarrollo. GitHub Copilot no es solo un autocompletado avanzado; representa un cambio paradigmático en la forma en que los ingenieros interactuamos con la abstracción del código, agilizando tareas repetitivas y permitiéndonos enfocar el esfuerzo cognitivo en decisiones de alto nivel.</p>
                         <a href="#" class="read-more">Seguir leyendo <span class="arrow">→</span></a>
                     </article>
 
@@ -75,9 +75,9 @@
                     <div class="posts-feed">
                         <h4 class="feed-title">Otros Ensayos</h4>
 
-                        <article class="feed-post">
+                        <article class="feed-post reveal-on-scroll">
                             <div class="feed-image-wrapper">
-                                <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=400&q=80" alt="Best Practices sculpture representation" class="feed-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=400&q=80" alt="Best Practices sculpture representation" class="feed-thumbnail fade-image">
                             </div>
                             <div class="feed-content">
                                 <span class="post-date">5 de agosto, 2026</span>
@@ -87,9 +87,9 @@
                             </div>
                         </article>
 
-                        <article class="feed-post">
+                        <article class="feed-post reveal-on-scroll">
                             <div class="feed-image-wrapper">
-                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80" alt="Modern engineering space DevOps" class="feed-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80" alt="Modern engineering space DevOps" class="feed-thumbnail fade-image">
                             </div>
                             <div class="feed-content">
                                 <span class="post-date">4 de agosto, 2026</span>
@@ -99,9 +99,9 @@
                             </div>
                         </article>
 
-                        <article class="feed-post">
+                        <article class="feed-post reveal-on-scroll">
                             <div class="feed-image-wrapper">
-                                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80" alt="Security concrete engineering" class="feed-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80" alt="Security concrete engineering" class="feed-thumbnail fade-image">
                             </div>
                             <div class="feed-content">
                                 <span class="post-date">3 de agosto, 2026</span>
@@ -116,7 +116,7 @@
         </section>
 
         <!-- Sección de Contacto Asimétrica -->
-        <section id="contacto" class="contact-section">
+        <section id="contacto" class="contact-section reveal-on-scroll">
             <div class="container">
                 <div class="contact-grid">
                     <div class="contact-info">
@@ -161,6 +161,38 @@
                     e.stopPropagation();
                     btn.classList.toggle('active');
                 });
+            });
+
+            // Programmatically bind load and error events to all .fade-image elements safely without inline scripts
+            document.querySelectorAll('.fade-image').forEach(img => {
+                const revealImg = () => {
+                    img.classList.add('loaded');
+                };
+
+                if (img.complete) {
+                    revealImg();
+                } else {
+                    img.addEventListener('load', revealImg);
+                    img.addEventListener('error', revealImg); // gracefully reveal even if download fails to maintain layout
+                }
+            });
+
+            // IntersectionObserver for elegant reveal-on-scroll animations
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target); // Reveal only once
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
             });
         });
     </script>

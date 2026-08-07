@@ -1,15 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
-    /* Sophisticated Tinted Editorial Palette (OKLCH) */
-    --color-bg: oklch(98.5% 0.006 75);       /* Warm, textured ivory/alabaster paper */
-    --color-text: oklch(18% 0.015 75);       /* Deep charcoal tinted with warm hue */
-    --color-text-muted: oklch(48% 0.012 75);  /* Muted dark grey tinted with warm hue */
-    --color-accent: oklch(42% 0.16 28);       /* Deep, sophisticated terracotta/rust red */
-    --color-accent-hover: oklch(32% 0.14 28); /* Darker terracotta */
-    --color-accent-subtle: oklch(94% 0.02 75); /* Soft tinted background/button */
-    --color-border: oklch(86% 0.01 75);       /* Soft elegant border lines */
+    /* Fallbacks for older/headless browsers (HEX/RGB) */
+    --color-bg: #faf9f6;                      /* Warm, textured ivory/alabaster paper */
+    --color-text: #2c2a29;                    /* Deep charcoal tinted with warm hue */
+    --color-text-muted: #797573;              /* Muted dark grey tinted with warm hue */
+    --color-accent: #b83a1b;                  /* Deep, sophisticated terracotta/rust red */
+    --color-accent-hover: #8e2b13;            /* Darker terracotta */
+    --color-accent-subtle: #f2eee9;           /* Soft tinted background/button */
+    --color-border: #e0dad5;                  /* Soft elegant border lines */
+}
 
+@supports (color: oklch(0% 0 0)) {
+    :root {
+        /* Sophisticated Tinted Editorial Palette (OKLCH) */
+        --color-bg: oklch(98.5% 0.006 75);
+        --color-text: oklch(18% 0.015 75);
+        --color-text-muted: oklch(48% 0.012 75);
+        --color-accent: oklch(42% 0.16 28);
+        --color-accent-hover: oklch(32% 0.14 28);
+        --color-accent-subtle: oklch(94% 0.02 75);
+        --color-border: oklch(86% 0.01 75);
+    }
+}
+
+:root {
     /* Typography System - Fluid Modular Scale */
     --font-display: 'Playfair Display', Georgia, serif;
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -48,6 +63,7 @@
 
 body {
     font-family: var(--font-sans);
+    background-color: #faf9f6; /* Fallback HEX color to avoid transparent rendering in headless environments */
     background-color: var(--color-bg);
     color: var(--color-text);
     line-height: 1.6;
@@ -64,6 +80,7 @@ body {
 /* Header & Navigation */
 header {
     border-bottom: 1px solid var(--color-border);
+    background-color: #faf9f6; /* Fallback HEX color to avoid transparent overlap in older/headless rendering engines */
     background-color: var(--color-bg);
     position: sticky;
     top: 0;
@@ -171,11 +188,17 @@ main {
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, oklch(85% 0.12 60 / 0.15) 0%, oklch(98.5% 0.006 75 / 0) 70%);
+    background: radial-gradient(circle, rgba(235, 140, 100, 0.12) 0%, rgba(250, 249, 246, 0) 70%);
     filter: blur(80px);
     pointer-events: none;
     z-index: 1;
     animation: float-aura 20s infinite ease-in-out;
+}
+
+@supports (color: oklch(0% 0 0)) {
+    .ambient-aura {
+        background: radial-gradient(circle, oklch(85% 0.12 60 / 0.15) 0%, oklch(98.5% 0.006 75 / 0) 70%);
+    }
 }
 
 @keyframes float-aura {
@@ -193,26 +216,19 @@ main {
     border-bottom: 1px solid var(--color-border);
 }
 
-/* Entrance Animations */
-.animated-entrance {
+/* Scroll Reveal Animations (Leonxlnx/taste-skill, Emil Kowalski design style) */
+.reveal-on-scroll {
     opacity: 0;
-    transform: translateY(20px);
-    animation: entrance-reveal 1s var(--ease-out) forwards;
+    transform: translateY(35px) scale(0.99);
+    transition:
+        opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
-#inicio.animated-entrance {
-    animation-delay: 0.1s;
-}
-
-#blog.animated-entrance {
-    animation-delay: 0.3s;
-}
-
-@keyframes entrance-reveal {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .hero-grid {
@@ -243,8 +259,26 @@ main {
     overflow: hidden;
     border-radius: 6px;
     border: 1px solid var(--color-border);
-    background-color: var(--color-accent-subtle);
+    /* High-end standard linear-gradient skeleton fallback */
+    background: linear-gradient(135deg, #eeeae5 0%, #e0dad5 100%);
     aspect-ratio: 16 / 9;
+    position: relative;
+}
+
+@supports (color: oklch(0% 0 0)) {
+    .hero-image-wrapper {
+        background: linear-gradient(135deg, oklch(93% 0.03 28) 0%, oklch(89% 0.05 28) 100%);
+    }
+}
+
+/* Image loading/fade-in state (Skills / Emil Kowalski tactile load transition) */
+.fade-image {
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s var(--ease-out), filter 1.2s var(--ease-out);
+}
+
+.fade-image.loaded {
+    opacity: 1;
 }
 
 .hero-image {
@@ -252,7 +286,6 @@ main {
     height: 100%;
     object-fit: cover;
     filter: sepia(0.12) contrast(1.02) brightness(0.98);
-    transition: transform 1.2s var(--ease-out), filter 1.2s var(--ease-out);
 }
 
 .hero-image-wrapper:hover .hero-image {
@@ -271,9 +304,16 @@ main {
     overflow: hidden;
     border-radius: 6px;
     border: 1px solid var(--color-border);
-    background-color: var(--color-accent-subtle);
+    /* High-end standard linear-gradient skeleton fallback */
+    background: linear-gradient(135deg, #eeeae5 0%, #e0dad5 100%);
     aspect-ratio: 16 / 10;
     margin-bottom: var(--space-sm);
+}
+
+@supports (color: oklch(0% 0 0)) {
+    .featured-image-container {
+        background: linear-gradient(135deg, oklch(93% 0.03 28) 0%, oklch(89% 0.05 28) 100%);
+    }
 }
 
 .featured-image {
@@ -281,7 +321,6 @@ main {
     height: 100%;
     object-fit: cover;
     filter: sepia(0.1) contrast(1.02);
-    transition: transform 1.2s var(--ease-out), filter 1.2s var(--ease-out);
 }
 
 .featured-image-container:hover .featured-image {
@@ -485,7 +524,15 @@ main {
     border-radius: 4px;
     border: 1px solid var(--color-border);
     aspect-ratio: 1 / 1;
-    background-color: var(--color-accent-subtle);
+    /* High-end standard linear-gradient skeleton fallback */
+    background: linear-gradient(135deg, #eeeae5 0%, #e0dad5 100%);
+    position: relative;
+}
+
+@supports (color: oklch(0% 0 0)) {
+    .feed-image-wrapper {
+        background: linear-gradient(135deg, oklch(93% 0.03 28) 0%, oklch(89% 0.05 28) 100%);
+    }
 }
 
 .feed-thumbnail {
@@ -493,7 +540,6 @@ main {
     height: 100%;
     object-fit: cover;
     filter: sepia(0.12) grayscale(0.2);
-    transition: transform 0.8s var(--ease-out), filter 0.8s var(--ease-out);
 }
 
 .feed-post:hover .feed-thumbnail {
@@ -578,7 +624,7 @@ main {
     text-decoration: none;
     font-weight: 600;
     font-size: var(--font-size-sm);
-    box-shadow: 0 4px 12px oklch(42% 0.16 28 / 0.15);
+    box-shadow: 0 4px 12px rgba(184, 58, 27, 0.15);
     transition:
         transform var(--duration-feedback) var(--ease-out),
         background-color var(--duration-hover) var(--ease-out),
@@ -587,7 +633,16 @@ main {
 
 .cta-button:hover {
     background-color: var(--color-accent-hover);
-    box-shadow: 0 6px 16px oklch(42% 0.16 28 / 0.25);
+    box-shadow: 0 6px 16px rgba(184, 58, 27, 0.25);
+}
+
+@supports (color: oklch(0% 0 0)) {
+    .cta-button {
+        box-shadow: 0 4px 12px oklch(42% 0.16 28 / 0.15);
+    }
+    .cta-button:hover {
+        box-shadow: 0 6px 16px oklch(42% 0.16 28 / 0.25);
+    }
 }
 
 .cta-button:active {
