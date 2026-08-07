@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Marcelo Barraza | Ingeniero de Sistemas</title>
+    <title>Marcelo Barraza — Pensamiento y Sistemas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="container">
-                <h1 class="logo">Marcelo Barraza</h1>
+                <div class="logo-group">
+                    <h1 class="logo">Marcelo Barraza</h1>
+                    <span class="logo-sub">Ingeniería de Sistemas & Arquitectura</span>
+                </div>
                 <ul class="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#blog">Ensayos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </div>
@@ -21,61 +24,88 @@
     </header>
 
     <main>
-        <!-- Sección Hero -->
+        <!-- Sección Hero Editorial -->
         <section id="inicio" class="hero">
             <div class="container">
-                <h2>Bienvenido a mi Blog</h2>
-                <p>Ingeniero de Sistemas | Tecnología y Desarrollo</p>
+                <div class="hero-grid">
+                    <div class="hero-statement">
+                        <h2>Explorando la intersección entre <em>arquitectura de software</em>, cultura técnica y robustez.</h2>
+                    </div>
+                    <div class="hero-bio">
+                        <p>Soy Ingeniero de Sistemas especializado en diseñar infraestructuras robustas, automatización ágil y seguridad por diseño. Este espacio recopila notas sobre el oficio de crear software duradero y mantenible.</p>
+                        <a href="#blog" class="hero-cta">Explorar ensayos <span class="arrow">→</span></a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Sección de Blog -->
+        <!-- Sección de Blog Asimétrica -->
         <section id="blog" class="blog-section">
             <div class="container">
                 <h3>Últimas Publicaciones</h3>
                 
-                <article class="blog-post">
-                    <h4>Introducción a GitHub Copilot</h4>
-                    <p class="post-date">6 de agosto, 2026</p>
-                    <p>GitHub Copilot es una herramienta revolucionaria que utiliza inteligencia artificial para ayudarte a escribir código más rápido y eficientemente. Descubre cómo puede transformar tu flujo de trabajo.</p>
-                    <a href="#" class="read-more">Leer más →</a>
-                </article>
+                <div class="blog-grid">
+                    <!-- Artículo Destacado (Principal) -->
+                    <article class="featured-post">
+                        <span class="post-category">Destacado / Inteligencia Artificial</span>
+                        <h4>Introducción a GitHub Copilot y la era de la programación asistida</h4>
+                        <span class="post-date">Publicado el 6 de agosto, 2026</span>
+                        <p>La inteligencia artificial ha dejado de ser una promesa de laboratorio para convertirse en un participante activo de nuestra rutina diaria de desarrollo. GitHub Copilot no es solo un autocompletado avanzado; representa un cambio paradigmático en la forma en que los ingenieros interactuamos con la abstracción del código, agilizando tareas repetitivas y permitiéndonos enfocar el esfuerzo cognitivo en decisiones de alto nivel.</p>
+                        <a href="#" class="read-more">Seguir leyendo <span class="arrow">→</span></a>
+                    </article>
 
-                <article class="blog-post">
-                    <h4>Mejores Prácticas en Ingeniería de Sistemas</h4>
-                    <p class="post-date">5 de agosto, 2026</p>
-                    <p>Descubre las mejores prácticas para diseñar sistemas escalables y mantenibles que crezcan con tu negocio. Aprende sobre arquitectura, seguridad y rendimiento.</p>
-                    <a href="#" class="read-more">Leer más →</a>
-                </article>
+                    <!-- Feed Lateral de otras publicaciones -->
+                    <div class="posts-feed">
+                        <h4 class="feed-title">Otros Ensayos</h4>
 
-                <article class="blog-post">
-                    <h4>DevOps: Automatización de Despliegues</h4>
-                    <p class="post-date">4 de agosto, 2026</p>
-                    <p>Aprende cómo automatizar tus procesos de despliegue usando herramientas modernas como Docker y Kubernetes. Optimiza tu pipeline CI/CD.</p>
-                    <a href="#" class="read-more">Leer más →</a>
-                </article>
+                        <article class="feed-post">
+                            <span class="post-date">5 de agosto, 2026</span>
+                            <h5>Mejores Prácticas en Ingeniería de Sistemas</h5>
+                            <p>Directrices fundamentales para diseñar arquitecturas de software que toleren el crecimiento orgánico, la escalabilidad técnica y el cambio operativo.</p>
+                            <a href="#" class="read-more">Leer <span class="arrow">→</span></a>
+                        </article>
 
-                <article class="blog-post">
-                    <h4>Seguridad en Aplicaciones Web</h4>
-                    <p class="post-date">3 de agosto, 2026</p>
-                    <p>Protege tus aplicaciones web de vulnerabilidades comunes. Aprende sobre OWASP, HTTPS, autenticación y prevención de ataques.</p>
-                    <a href="#" class="read-more">Leer más →</a>
-                </article>
+                        <article class="feed-post">
+                            <span class="post-date">4 de agosto, 2026</span>
+                            <h5>DevOps: Automatización y Despliegues de Confianza</h5>
+                            <p>Cómo estructurar pipelines de integración y entrega continuas robustos empleando la consistencia e inmutabilidad de contenedores.</p>
+                            <a href="#" class="read-more">Leer <span class="arrow">→</span></a>
+                        </article>
+
+                        <article class="feed-post">
+                            <span class="post-date">3 de agosto, 2026</span>
+                            <h5>Seguridad en Aplicaciones Web Modernas</h5>
+                            <p>Análisis práctico de mitigación de riesgos y vectores de ataque comunes basándonos en metodologías del estándar abierto OWASP.</p>
+                            <a href="#" class="read-more">Leer <span class="arrow">→</span></a>
+                        </article>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Sección de Contacto -->
+        <!-- Sección de Contacto Asimétrica -->
         <section id="contacto" class="contact-section">
             <div class="container">
-                <h3>Ponte en Contacto</h3>
-                <p>¿Interesado en colaborar o tienes preguntas? Déjame un mensaje.</p>
-                <a href="mailto:marcelo@ingenierosistemas.com" class="cta-button">Enviar Email</a>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Iniciemos una conversación</h3>
+                        <p>¿Buscas colaborar en infraestructuras complejas, discutir sobre diseño de sistemas o simplemente intercambiar ideas sobre tecnología?</p>
+                    </div>
+                    <div class="contact-cta">
+                        <a href="mailto:marcelo@ingenierosistemas.com" class="cta-button">Enviar un mensaje</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Marcelo Barraza - Ingeniero de Sistemas. Todos los derechos reservados.</p>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Marcelo Barraza. Todos los derechos reservados.</p>
+                <p>Hecho con precisión editorial y minimalismo.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
