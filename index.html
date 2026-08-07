@@ -26,8 +26,18 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo-group">
-                    <h1 class="logo">Marcelo Barraza</h1>
-                    <span class="logo-sub">Ingeniería de Sistemas & Arquitectura</span>
+                    <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M50 15 L85 35 L85 65 L50 85 L15 65 L15 35 Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+                        <path d="M50 15 L50 85" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/>
+                        <path d="M15 35 L85 65" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/>
+                        <path d="M15 65 L85 35" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/>
+                        <circle cx="50" cy="50" r="12" fill="var(--color-accent)" stroke="currentColor" stroke-width="3"/>
+                        <path d="M50 28 L50 38 M50 62 L50 72 M28 50 L38 50 M62 50 L72 50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <div class="logo-text">
+                        <h1 class="logo">Marcelo Barraza</h1>
+                        <span class="logo-sub">Cybernetic Systems & Enterprise Architecture</span>
+                    </div>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
@@ -53,7 +63,22 @@
                         </div>
                     </div>
                     <div class="hero-bio">
-                        <p>Soy Ingeniero de Sistemas especializado en diseñar infraestructuras robustas, automatización ágil y seguridad por diseño. Este espacio recopila notas sobre el oficio de crear software duradero y mantenible.</p>
+                        <div class="profile-card">
+                            <div class="profile-image-container">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=80" alt="Marcelo Barraza" class="profile-image fade-image">
+                                <div class="profile-badge">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                    </svg>
+                                    <span>Verificado</span>
+                                </div>
+                            </div>
+                            <div class="profile-details">
+                                <span class="profile-role">Arquitecto Principal</span>
+                                <p class="profile-description">Ingeniero de Sistemas de Misión Crítica. Especialista certificado en optimización de infraestructuras globales, automatización resiliente y arquitecturas empresariales de alta disponibilidad.</p>
+                            </div>
+                        </div>
                         <a href="#blog" class="hero-cta">Explorar ensayos <span class="arrow">→</span></a>
                     </div>
                 </div>
@@ -63,7 +88,7 @@
         <!-- Sección de Blog Asimétrica -->
         <section id="blog" class="blog-section reveal-on-scroll">
             <div class="container">
-                <h3>Últimas Publicaciones</h3>
+                <h3>Sistemas y Automatizaciones de Misión Crítica</h3>
                 
                 <div class="blog-grid">
                     <!-- Artículo Destacado (Principal) -->
@@ -76,26 +101,26 @@
                                 </svg>
                             </button>
                         </div>
-                        <span class="post-category">Destacado / Inteligencia Artificial</span>
-                        <h4>Introducción a GitHub Copilot y la era de la programación asistida</h4>
+                        <span class="post-category">Cibernética Industrial / Certificación ISO</span>
+                        <h4>Cibernética y Digitalización de Procesos bajo Normativa ISO (Bureau Veritas)</h4>
                         <span class="post-date">Publicado el 6 de agosto, 2026</span>
-                        <p>La inteligencia artificial ha dejado de ser una promesa de laboratorio para convertirse en un participant activo de nuestra rutina diaria de desarrollo. GitHub Copilot no es solo un autocompletado avanzado; representa un cambio paradigmático en la forma en que los ingenieros interactuamos con la abstracción del código, agilizando tareas repetitivas y permitiéndonos enfocar el esfuerzo cognitivo en decisiones de alto nivel.</p>
-                        <a href="#" class="read-more">Seguir leyendo <span class="arrow">→</span></a>
+                        <p>La digitalización de procesos industriales exige una gobernanza técnica implacable. Abordamos cómo estructurar la cibernética corporativa mediante la integración de la normativa ISO 27001 e ISO 9001, auditadas por Bureau Veritas. Descubre el diseño de flujos resilientes, trazabilidad inmutable de operaciones y mitigación de fallos en sistemas socio-técnicos complejos.</p>
+                        <button class="read-more-btn" data-article="cybernetics">Seguir leyendo <span class="arrow">→</span></button>
                     </article>
 
                     <!-- Feed Lateral de otras publicaciones -->
                     <div class="posts-feed">
-                        <h4 class="feed-title">Otros Ensayos</h4>
+                        <h4 class="feed-title">Artículos Técnicos</h4>
 
                         <article class="feed-post reveal-on-scroll">
                             <div class="feed-image-wrapper">
-                                <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=400&q=80" alt="Best Practices sculpture representation" class="feed-thumbnail fade-image">
+                                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=400&q=80" alt="Python and automation coding" class="feed-thumbnail fade-image">
                             </div>
                             <div class="feed-content">
                                 <span class="post-date">5 de agosto, 2026</span>
-                                <h5>Mejores Prácticas en Ingeniería de Sistemas</h5>
-                                <p>Directrices fundamentales para diseñar arquitecturas de software que toleren el crecimiento orgánico, la escalabilidad técnica y el cambio operativo.</p>
-                                <a href="#" class="read-more">Leer <span class="arrow">→</span></a>
+                                <h5>Hiper-automatización Resiliente: Python & n8n</h5>
+                                <p>Orquestación avanzada de flujos empresariales integrando scripts robustos de Python con la flexibilidad visual y transaccional de n8n.</p>
+                                <button class="read-more-btn" data-article="automation">Leer <span class="arrow">→</span></button>
                             </div>
                         </article>
 
@@ -105,9 +130,9 @@
                             </div>
                             <div class="feed-content">
                                 <span class="post-date">4 de agosto, 2026</span>
-                                <h5>DevOps: Automatización y Despliegues de Confianza</h5>
-                                <p>Cómo estructurar pipelines de integración y entrega continuas robustos empleando la consistencia e inmutabilidad de contenedores.</p>
-                                <a href="#" class="read-more">Leer <span class="arrow">→</span></a>
+                                <h5>Despliegues Continuos Seguros & PWAs Corporativas</h5>
+                                <p>Estrategias modernas de CI/CD para arquitecturas híbridas y despliegues de PWAs seguras con offline-first de nivel empresarial.</p>
+                                <button class="read-more-btn" data-article="deployments">Leer <span class="arrow">→</span></button>
                             </div>
                         </article>
 
@@ -117,9 +142,9 @@
                             </div>
                             <div class="feed-content">
                                 <span class="post-date">3 de agosto, 2026</span>
-                                <h5>Seguridad en Aplicaciones Web Modernas</h5>
-                                <p>Análisis práctico de mitigación de riesgos y vectores de ataque comunes basándonos en metodologías del estándar abierto OWASP.</p>
-                                <a href="#" class="read-more">Leer <span class="arrow">→</span></a>
+                                <h5>Software Corporativo Hecho a Medida</h5>
+                                <p>Por qué las suites empaquetadas fallan frente a problemas no estándar. Filosofía de diseño de software a medida de alto impacto operativo.</p>
+                                <button class="read-more-btn" data-article="custom-software">Leer <span class="arrow">→</span></button>
                             </div>
                         </article>
                     </div>
@@ -152,9 +177,172 @@
         </div>
     </footer>
 
+    <!-- Interactive Reader Drawer / Slide-out Modal Overlay -->
+    <div class="drawer-overlay" id="articleDrawer" aria-hidden="true" role="dialog">
+        <div class="drawer-content">
+            <button class="drawer-close-btn" aria-label="Cerrar artículo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="drawer-body">
+                <!-- Content will be injected dynamically via JS -->
+            </div>
+        </div>
+    </div>
+
     <!-- Interactive Logic for Scroll Tracking and Micro-interactions -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Detailed content database for the articles (high quality and immersive)
+            const articlesContent = {
+                cybernetics: {
+                    category: "Cibernética Industrial / Certificación ISO",
+                    title: "Cibernética y Digitalización de Procesos bajo Normativa ISO (Bureau Veritas)",
+                    date: "Publicado el 6 de agosto, 2026",
+                    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+                    html: `
+                        <p class="lead">La convergencia entre la cibernética organizacional y la digitalización de procesos representa la frontera más crítica de la eficiencia operativa moderna.</p>
+                        <p>Cuando una corporación busca estructurar una verdadera <strong>cibernética de procesos</strong>, no se trata únicamente de añadir software o automatizar tareas aisladas. Se trata de modelar un sistema cibernético de lazo cerrado (feedback-loop) donde cada proceso digitalizado alimenta un núcleo unificado de datos, asegurando la consistencia operativa y la mitigación de riesgos sistémicos.</p>
+
+                        <div class="info-block">
+                            <h4>Certificación y Cumplimiento: ISO 9001, ISO 27001 & Bureau Veritas</h4>
+                            <p>Cualquier transformación digital profunda queda vacía sin un marco normativo estricto. La integración de sistemas bajo normas internacionales certificadas por organismos de prestigio mundial como <strong>Bureau Veritas</strong> garantiza que la digitalización cumpla con:</p>
+                            <ul>
+                                <li><strong>ISO 9001 (Gestión de Calidad):</strong> Trazabilidad absoluta de cada transacción digitalizada y estandarización del control de procesos.</li>
+                                <li><strong>ISO 27001 (Seguridad de la Información):</strong> Aseguramiento de la confidencialidad, integridad y disponibilidad del activo más valioso de la organización: la información.</li>
+                            </ul>
+                        </div>
+
+                        <h3>El Diseño Socio-Técnico y la Automatización de Procesos</h3>
+                        <p>Nuestra metodología no se limita a programar scripts; analizamos exhaustivamente el comportamiento organizativo. Mediante interfaces fluidas y flujos de automatización unificados, los equipos interactúan con el software de manera intuitiva, eliminando cuellos de botella e ineficiencias humanas, logrando una gobernanza informática de excelencia y un control de calidad certificado a nivel global.</p>
+                    `
+                },
+                automation: {
+                    category: "Automatización Avanzada / Backend",
+                    title: "Hiper-automatización Resiliente: Python & n8n",
+                    date: "Publicado el 5 de agosto, 2026",
+                    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+                    html: `
+                        <p class="lead">La hiper-automatización moderna demanda la combinación perfecta entre la potencia analítica de Python y la flexibilidad transaccional de n8n.</p>
+                        <p>A menudo, las empresas se encuentran atrapadas entre costosas herramientas propietarias de RPA y scripts aislados de Python difíciles de mantener. La solución reside en un enfoque híbrido: emplear <strong>n8n</strong> como orquestador visual de eventos, colas de mensajería y APIs, delegando la lógica compleja de negocio, el parsing avanzado, procesamiento de datos y la inteligencia artificial a microservicios optimizados en <strong>Python</strong>.</p>
+
+                        <h3>Ventajas Clave de la Arquitectura Python + n8n:</h3>
+                        <ul>
+                            <li><strong>Flexibilidad Extrema:</strong> n8n permite conectar cientos de APIs sin esfuerzo mediante flujos de trabajo asíncronos y visuales.</li>
+                            <li><strong>Lógica sin Límites:</strong> Python aborda transformaciones de datos complejas (usando Pandas o Numpy), integraciones a bajo nivel y automatización de sistemas locales.</li>
+                            <li><strong>Tolerancia a Fallos:</strong> Implementación de políticas de reintentos, colas de tareas con RabbitMQ/Redis y notificaciones inmediatas en tiempo real ante fallos imprevistos.</li>
+                        </ul>
+                        <p>Al diseñar estos flujos, logramos liberar cientos de horas de trabajo operativo semanal, garantizando una arquitectura de automatización robusta, escalable y completamente auto-mantenible.</p>
+                    `
+                },
+                deployments: {
+                    category: "CI/CD & Mobile Tech",
+                    title: "Despliegues Continuos Seguros & PWAs Corporativas",
+                    date: "Publicado el 4 de agosto, 2026",
+                    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+                    html: `
+                        <p class="lead">El desarrollo móvil y web moderno converge en las Aplicaciones Web Progresivas (PWAs) impulsadas por pipelines inmutables y seguros de CI/CD.</p>
+                        <p>Una <strong>Progressive Web App (PWA)</strong> corporativa de alto rendimiento debe ofrecer una experiencia offline idéntica a una aplicación nativa. Para lograr esto de forma segura y constante, el ciclo de vida del software debe estar automatizado de punta a punta. Esto se logra mediante pipelines robustos de integración y entrega continua (GitLab CI, GitHub Actions) configurados bajo estrictas políticas de seguridad por diseño.</p>
+
+                        <h3>Estrategias de Despliegue de Alta Confiabilidad:</h3>
+                        <ul>
+                            <li><strong>Despliegues en Azul-Verde (Blue-Green) y Canarios:</strong> Reducción del riesgo de caída del servicio al mínimo, redirigiendo el tráfico progresivamente una vez superadas las pruebas de salud automáticas.</li>
+                            <li><strong>Service Workers Optimizados:</strong> Estrategias refinadas de almacenamiento en caché para PWAs (Network-First, Cache-First) que garantizan velocidad instantánea incluso con conexiones 2G/3G inestables.</li>
+                            <li><strong>Escaneo Automatizado de Vulnerabilidades:</strong> Análisis estático y dinámico de código (SAST/DAST) inyectados directamente en los pipelines antes de cada paso a producción.</li>
+                        </ul>
+                        <p>Este enfoque holístico no solo acelera el time-to-market de las soluciones, sino que blinda el software frente a fallos humanos, garantizando consistencia absoluta en cada entrega.</p>
+                    `
+                },
+                "custom-software": {
+                    category: "Desarrollo a Medida / Consultoría",
+                    title: "Software Corporativo Hecho a Medida",
+                    date: "Publicado el 3 de agosto, 2026",
+                    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
+                    html: `
+                        <p class="lead">Las suites empaquetadas obligan a las empresas a adaptar sus operaciones al software. El verdadero software a medida adapta la tecnología al core-business para maximizar la ventaja competitiva.</p>
+                        <p>Cada organización tiene flujos críticos únicos que le permiten diferenciarse en el mercado. Cuando estos flujos se intentan encajar en plantillas genéricas o herramientas ERP rígidas, se introduce fricción operativa e ineficiencia. El diseño de <strong>software hecho a medida</strong> de nivel corporativo resuelve este problema desde la raíz.</p>
+
+                        <h3>Principios de Nuestro Software Corporativo:</h3>
+                        <ul>
+                            <li><strong>Arquitectura Modular y Desacoplada:</strong> Diseñados bajo microservicios o monolitos modulares limpios (Clean Architecture) que garantizan su escalabilidad sin comprometer el rendimiento técnico.</li>
+                            <li><strong>Interoperabilidad Nativa:</strong> Conexión fluida con los sistemas legados existentes a través de APIs de alto rendimiento y conectores seguros.</li>
+                            <li><strong>Seguridad End-to-End:</strong> Diseñado desde el inicio con principios de seguridad OWASP y gobernanza empresarial estricta.</li>
+                        </ul>
+                        <p>Crear software a medida no es un gasto, es una inversión de alto retorno estratégico que optimiza la experiencia del usuario, automatiza los flujos de negocio más valiosos y asegura la resiliencia tecnológica a largo plazo.</p>
+                    `
+                }
+            };
+
+            // Drawer Selectors
+            const drawer = document.getElementById('articleDrawer');
+            const drawerBody = drawer.querySelector('.drawer-body');
+            const drawerCloseBtn = drawer.querySelector('.drawer-close-btn');
+
+            // Function to open drawer and inject premium content
+            const openDrawer = (articleKey) => {
+                const article = articlesContent[articleKey];
+                if (!article) return;
+
+                // Inject markup dynamically
+                drawerBody.innerHTML = `
+                    <div class="drawer-header-image">
+                        <img src="${article.image}" alt="${article.title}" class="drawer-banner">
+                    </div>
+                    <div class="drawer-article-content">
+                        <span class="drawer-category">${article.category}</span>
+                        <h2 class="drawer-title">${article.title}</h2>
+                        <span class="drawer-date">${article.date}</span>
+                        <div class="drawer-divider"></div>
+                        <div class="drawer-rich-text">
+                            ${article.html}
+                        </div>
+                    </div>
+                `;
+
+                drawer.classList.add('open');
+                drawer.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden'; // Lock background scrolling
+            };
+
+            // Function to close drawer
+            const closeDrawer = () => {
+                drawer.classList.remove('open');
+                drawer.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = ''; // Restore background scrolling
+                // Clean up body content after animation closes to prevent heavy memory usage
+                setTimeout(() => {
+                    if (!drawer.classList.contains('open')) {
+                        drawerBody.innerHTML = '';
+                    }
+                }, 400);
+            };
+
+            // Programmatically bind click events to all read-more buttons
+            document.querySelectorAll('.read-more-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const articleKey = btn.getAttribute('data-article');
+                    openDrawer(articleKey);
+                });
+            });
+
+            // Close Drawer Event Listeners
+            drawerCloseBtn.addEventListener('click', closeDrawer);
+            drawer.addEventListener('click', (e) => {
+                if (e.target === drawer) {
+                    closeDrawer();
+                }
+            });
+
+            // Escape Key Close Support
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && drawer.classList.contains('open')) {
+                    closeDrawer();
+                }
+            });
+
             // Scroll indicator implementation (Optimized off-GPU transform scaleX)
             const progressBar = document.querySelector('.scroll-progress-bar');
             window.addEventListener('scroll', () => {
