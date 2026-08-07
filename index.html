@@ -8,6 +8,9 @@
 </head>
 <body>
     <header>
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar"></div>
+        </div>
         <nav class="navbar">
             <div class="container">
                 <div class="logo-group">
@@ -24,12 +27,18 @@
     </header>
 
     <main>
+        <!-- Ambient decorative aura backdrop -->
+        <div class="ambient-aura"></div>
+
         <!-- Sección Hero Editorial -->
-        <section id="inicio" class="hero">
+        <section id="inicio" class="hero animated-entrance">
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-statement">
                         <h2>Explorando la intersección entre <em>arquitectura de software</em>, cultura técnica y robustez.</h2>
+                        <div class="hero-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80" alt="Minimalist abstract digital graphic structure" class="hero-image">
+                        </div>
                     </div>
                     <div class="hero-bio">
                         <p>Soy Ingeniero de Sistemas especializado en diseñar infraestructuras robustas, automatización ágil y seguridad por diseño. Este espacio recopila notas sobre el oficio de crear software duradero y mantenible.</p>
@@ -40,13 +49,21 @@
         </section>
 
         <!-- Sección de Blog Asimétrica -->
-        <section id="blog" class="blog-section">
+        <section id="blog" class="blog-section animated-entrance">
             <div class="container">
                 <h3>Últimas Publicaciones</h3>
                 
                 <div class="blog-grid">
                     <!-- Artículo Destacado (Principal) -->
                     <article class="featured-post">
+                        <div class="featured-image-container">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="Symmetry and structures in modern engineering" class="featured-image">
+                            <button class="bookmark-btn" aria-label="Guardar artículo">
+                                <svg class="bookmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
                         <span class="post-category">Destacado / Inteligencia Artificial</span>
                         <h4>Introducción a GitHub Copilot y la era de la programación asistida</h4>
                         <span class="post-date">Publicado el 6 de agosto, 2026</span>
@@ -59,24 +76,39 @@
                         <h4 class="feed-title">Otros Ensayos</h4>
 
                         <article class="feed-post">
-                            <span class="post-date">5 de agosto, 2026</span>
-                            <h5>Mejores Prácticas en Ingeniería de Sistemas</h5>
-                            <p>Directrices fundamentales para diseñar arquitecturas de software que toleren el crecimiento orgánico, la escalabilidad técnica y el cambio operativo.</p>
-                            <a href="#" class="read-more">Leer <span class="arrow">→</span></a>
+                            <div class="feed-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=400&q=80" alt="Best Practices sculpture representation" class="feed-thumbnail">
+                            </div>
+                            <div class="feed-content">
+                                <span class="post-date">5 de agosto, 2026</span>
+                                <h5>Mejores Prácticas en Ingeniería de Sistemas</h5>
+                                <p>Directrices fundamentales para diseñar arquitecturas de software que toleren el crecimiento orgánico, la escalabilidad técnica y el cambio operativo.</p>
+                                <a href="#" class="read-more">Leer <span class="arrow">→</span></a>
+                            </div>
                         </article>
 
                         <article class="feed-post">
-                            <span class="post-date">4 de agosto, 2026</span>
-                            <h5>DevOps: Automatización y Despliegues de Confianza</h5>
-                            <p>Cómo estructurar pipelines de integración y entrega continuas robustos empleando la consistencia e inmutabilidad de contenedores.</p>
-                            <a href="#" class="read-more">Leer <span class="arrow">→</span></a>
+                            <div class="feed-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80" alt="Modern engineering space DevOps" class="feed-thumbnail">
+                            </div>
+                            <div class="feed-content">
+                                <span class="post-date">4 de agosto, 2026</span>
+                                <h5>DevOps: Automatización y Despliegues de Confianza</h5>
+                                <p>Cómo estructurar pipelines de integración y entrega continuas robustos empleando la consistencia e inmutabilidad de contenedores.</p>
+                                <a href="#" class="read-more">Leer <span class="arrow">→</span></a>
+                            </div>
                         </article>
 
                         <article class="feed-post">
-                            <span class="post-date">3 de agosto, 2026</span>
-                            <h5>Seguridad en Aplicaciones Web Modernas</h5>
-                            <p>Análisis práctico de mitigación de riesgos y vectores de ataque comunes basándonos en metodologías del estándar abierto OWASP.</p>
-                            <a href="#" class="read-more">Leer <span class="arrow">→</span></a>
+                            <div class="feed-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80" alt="Security concrete engineering" class="feed-thumbnail">
+                            </div>
+                            <div class="feed-content">
+                                <span class="post-date">3 de agosto, 2026</span>
+                                <h5>Seguridad en Aplicaciones Web Modernas</h5>
+                                <p>Análisis práctico de mitigación de riesgos y vectores de ataque comunes basándonos en metodologías del estándar abierto OWASP.</p>
+                                <a href="#" class="read-more">Leer <span class="arrow">→</span></a>
+                            </div>
                         </article>
                     </div>
                 </div>
@@ -107,5 +139,30 @@
             </div>
         </div>
     </footer>
+
+    <!-- Interactive Logic for Scroll Tracking and Micro-interactions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll indicator implementation
+            const progressBar = document.querySelector('.scroll-progress-bar');
+            window.addEventListener('scroll', () => {
+                const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+                if (totalScroll > 0) {
+                    const percentage = (window.pageYOffset / totalScroll) * 100;
+                    progressBar.style.width = percentage + '%';
+                }
+            }, { passive: true });
+
+            // Bookmark Button Toggle Interaction
+            const bookmarkButtons = document.querySelectorAll('.bookmark-btn');
+            bookmarkButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    btn.classList.toggle('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

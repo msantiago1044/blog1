@@ -70,6 +70,23 @@ header {
     z-index: 100;
 }
 
+/* Elegant Scroll Progress Bar */
+.scroll-progress-container {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+}
+
+.scroll-progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--color-accent);
+    transition: width 0.1s ease-out;
+}
+
 .navbar .container {
     display: flex;
     justify-content: space-between;
@@ -143,12 +160,59 @@ header {
 /* Layout Grid and Main Sections */
 main {
     padding-bottom: var(--space-3xl);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Ambient backdrop blur aura */
+.ambient-aura {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, oklch(85% 0.12 60 / 0.15) 0%, oklch(98.5% 0.006 75 / 0) 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 1;
+    animation: float-aura 20s infinite ease-in-out;
+}
+
+@keyframes float-aura {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(-50px, 40px) scale(1.1);
+    }
 }
 
 /* Editorial Hero Section (Asymmetric) */
 .hero {
     padding: var(--space-2xl) 0;
     border-bottom: 1px solid var(--color-border);
+}
+
+/* Entrance Animations */
+.animated-entrance {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: entrance-reveal 1s var(--ease-out) forwards;
+}
+
+#inicio.animated-entrance {
+    animation-delay: 0.1s;
+}
+
+#blog.animated-entrance {
+    animation-delay: 0.3s;
+}
+
+@keyframes entrance-reveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-grid {
@@ -173,10 +237,108 @@ main {
     color: var(--color-accent);
 }
 
+/* Hero image wrapper & styling with elegant filters */
+.hero-image-wrapper {
+    margin-top: var(--space-xl);
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-accent-subtle);
+    aspect-ratio: 16 / 9;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.12) contrast(1.02) brightness(0.98);
+    transition: transform 1.2s var(--ease-out), filter 1.2s var(--ease-out);
+}
+
+.hero-image-wrapper:hover .hero-image {
+    transform: scale(1.04);
+    filter: sepia(0) contrast(1.05) brightness(1);
+}
+
 .hero-bio {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
+}
+
+.featured-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-accent-subtle);
+    aspect-ratio: 16 / 10;
+    margin-bottom: var(--space-sm);
+}
+
+.featured-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.1) contrast(1.02);
+    transition: transform 1.2s var(--ease-out), filter 1.2s var(--ease-out);
+}
+
+.featured-image-container:hover .featured-image {
+    transform: scale(1.05);
+    filter: sepia(0) contrast(1.04);
+}
+
+/* Bookmark toggle button with tactile micro-interaction */
+.bookmark-btn {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition:
+        transform var(--duration-feedback) var(--ease-out),
+        color var(--duration-hover) var(--ease-out),
+        background-color var(--duration-hover) var(--ease-out),
+        border-color var(--duration-hover) var(--ease-out);
+    z-index: 10;
+}
+
+.bookmark-icon {
+    width: 18px;
+    height: 18px;
+    transition: transform var(--duration-hover) var(--ease-out);
+}
+
+.bookmark-btn:hover {
+    color: var(--color-accent);
+    background-color: var(--color-bg);
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.bookmark-btn:active {
+    transform: scale(0.9) translateY(0);
+}
+
+.bookmark-btn.active {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    border-color: var(--color-accent);
+}
+
+.bookmark-btn.active .bookmark-icon {
+    fill: currentColor;
+    transform: scale(1.1);
 }
 
 .hero-bio p {
@@ -310,12 +472,39 @@ main {
 }
 
 .feed-post {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: var(--space-md);
     padding-bottom: var(--space-md);
     border-bottom: 1px solid var(--color-border);
     transition: border-color var(--duration-hover) var(--ease-out);
+}
+
+.feed-image-wrapper {
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-accent-subtle);
+}
+
+.feed-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.12) grayscale(0.2);
+    transition: transform 0.8s var(--ease-out), filter 0.8s var(--ease-out);
+}
+
+.feed-post:hover .feed-thumbnail {
+    transform: scale(1.08);
+    filter: sepia(0) grayscale(0);
+}
+
+.feed-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
 }
 
 .feed-post:last-child {
