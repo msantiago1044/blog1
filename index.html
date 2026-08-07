@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcelo Barraza — Pensamiento y Sistemas</title>
     <link rel="stylesheet" href="styles.css?v=2.0.0">
+    <!-- Progressive Enhancement: Ensure instant layout visibility if JavaScript is disabled -->
+    <noscript>
+        <style>
+            .reveal-on-scroll {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .fade-image {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
 </head>
 <body>
     <header>
@@ -143,13 +155,13 @@
     <!-- Interactive Logic for Scroll Tracking and Micro-interactions -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Scroll indicator implementation
+            // Scroll indicator implementation (Optimized off-GPU transform scaleX)
             const progressBar = document.querySelector('.scroll-progress-bar');
             window.addEventListener('scroll', () => {
                 const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
                 if (totalScroll > 0) {
-                    const percentage = (window.pageYOffset / totalScroll) * 100;
-                    progressBar.style.width = percentage + '%';
+                    const percentage = window.pageYOffset / totalScroll;
+                    progressBar.style.transform = `scaleX(${percentage})`;
                 }
             }, { passive: true });
 
@@ -194,6 +206,17 @@
             revealElements.forEach(el => {
                 revealObserver.observe(el);
             });
+
+            // Robust JS fallback timeout: Force-reveal elements after 1000ms if
+            // the intersection observer fails, or if external images timeout/fail to respond.
+            setTimeout(() => {
+                document.querySelectorAll('.reveal-on-scroll:not(.revealed)').forEach(el => {
+                    el.classList.add('revealed');
+                });
+                document.querySelectorAll('.fade-image:not(.loaded)').forEach(img => {
+                    img.classList.add('loaded');
+                });
+            }, 1000);
         });
     </script>
 </body>
